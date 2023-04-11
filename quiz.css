@@ -1,0 +1,51 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid var(--dark-gray);
+    background-color: #c3c197;
+    border-radius: 0.5rem;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--dark-gray);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: var(--purple);
+}
+
+.choice-text {
+    padding: 1.5rem;
+    width: 100%;
+    width: 100%;
+}
+
+.correct {
+    background-color: #6db67e;
+}
+
+.incorrect {
+    background-color: #cd6e78;
+}
+
+/* HUD */
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hud-main-text {
+    text-align: center;
+}
