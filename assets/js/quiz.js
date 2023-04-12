@@ -85,7 +85,7 @@ startTimer = (seconds) => {
         if (counter == 0) {
             clearInterval(interval);
             setTimeout( () => {
-                return window.location.assign('/Quiz/../end2.html');
+                return window.location.assign('../../end2.html');
             }, 1000);
         };
     }, 1000);
@@ -103,7 +103,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
         score = counter;
         localStorage.setItem('mostRecentScore', score);
-        return window.location.assign('/Quiz/../end2.html');
+        return window.location.assign('../../end2.html');
     };
     questionCounter++;
     questionCounterText.innerText = questionCounter + '/' + maxQuestions;
