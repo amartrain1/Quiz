@@ -85,7 +85,7 @@ startTimer = (seconds) => {
         if (counter == 0) {
             clearInterval(interval);
             setTimeout( () => {
-                return window.location.assign('end2.html');
+                return window.location.replace('end2.html');
             }, 1000);
         };
     }, 1000);
