@@ -33,7 +33,7 @@ saveHighScore = (e) => {
     highScores.splice(5);
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/quiz/index.html');
+    window.location.assign('/Quiz/index.html');
 
     console.log(highScores);
 };
