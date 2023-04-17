@@ -64,7 +64,7 @@ var questions = [
 // Constants
 const questionsAmount = questions.length;
 
-startTimer = (seconds) => {
+function startTimer(seconds) {
     counter = seconds;
 
     const interval = setInterval(() => {
@@ -80,7 +80,7 @@ startTimer = (seconds) => {
     }, 1000);
 };
 
-startGame = () => {
+function startGame() {
     questionCounter = 0;
     score = 0;
     availableQuestions = questions;
@@ -88,7 +88,7 @@ startGame = () => {
     getNewQuestion();
 };
 
-getNewQuestion = () => {
+function getNewQuestion() {
     if (availableQuestions.length === 0 || questionCounter >= questionsAmount) {
         score = counter;
         localStorage.setItem('mostRecentScore', score);
@@ -112,28 +112,33 @@ getNewQuestion = () => {
     index++;
 };
 
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-        if (!acceptingAnswers) {
+for (var i = 0; i < choices.length; i++) {
+    const choice = choices[i];
+    choice.addEventListener('click', event => {
+        if (acceptingAnswers === false) {
             return;
         };
         acceptingAnswers = false;
-        var selectedChoice = e.target;
+        var selectedChoice = event.target;
         var selectedAnswer = selectedChoice.dataset['number'];
         
-        var classToApply =
-            selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        var classToApply = ''
+        if (selectedAnswer == currentQuestion.answer) {
+            classToApply = 'correct';
+        } else {
+            classToApply = 'incorrect';
+        };
 
-            if (classToApply === 'incorrect') {
-                counter -= 2;
-            };
+        if (classToApply === 'incorrect') {
+            counter -= 2;
+        };
 
         selectedChoice.parentElement.classList.add(classToApply);
-        setTimeout( () => {
+        setTimeout(function() {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         }, 500);
     });
-});
+};
 
 startGame();
