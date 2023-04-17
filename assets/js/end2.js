@@ -6,7 +6,6 @@ var saveScoreBtn = document.getElementById('saveScoreBtn');
 var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 const maxHighScores = 5;
-// console.log(highScores);
 
 finalScoreText.textContent = mostRecentScore;
 
@@ -14,26 +13,39 @@ username.addEventListener('keyup', () => {
     saveScoreBtn.disabled = !username.value;
 });
 
-saveHighScore = (e) => {
-    console.log('clicked the save button!');
+function saveHighScore(e) {
     e.preventDefault();
 
-    var score = {
-        // score: Math.floor(Math.random() * 100),
-        score: mostRecentScore,
-        name: username.value,
-    };
+    var score = mostRecentScore;
+    var name = username.value;
+
     highScores.push(score);
     console.log(highScores);
 
     highScores.sort( (a,b) => {
         return b.score - a.score;
-    });
-
-    highScores.splice(5);
+    })
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    return window.location.href = 'index.html';
+    return window.location.href = 'highscores.html'
+}
 
-    // console.log(highScores);
-};
+// saveHighScore = (e) => {
+//     e.preventDefault();
+
+//     var score = {
+//         score: mostRecentScore,
+//         name: username.value,
+//     };
+//     highScores.push(score);
+//     console.log(highScores);
+
+//     highScores.sort( (a,b) => {
+//         return b.score - a.score;
+//     });
+
+//     highScores.splice(maxHighScores);
+
+//     localStorage.setItem('highScores', JSON.stringify(highScores));
+//     return window.location.href = 'index.html';
+// };

@@ -1,7 +1,6 @@
 var highScoresList = document.getElementById('highScoresList');
 var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-// change to for loop
 var highScoreItems = '';
 for (var i = 0; i < highScores.length; i++) {
     const score = highScores[i];
