@@ -10,10 +10,6 @@ const maxHighScores = 5;
 
 finalScoreText.textContent = mostRecentScore;
 
-username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value;
-});
-
 // run this code on click of save button
 saveScoreBtn.addEventListener('click', function() {
     e.preventDefault();
@@ -31,5 +27,5 @@ saveScoreBtn.addEventListener('click', function() {
     })
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    return window.location.href = 'highscores.html';
+    return window.location.href = './highscores.html'
 });

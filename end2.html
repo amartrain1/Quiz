@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,15 @@
     <title>Quiz - End Screen</title>
     <link rel="stylesheet" href="assets/css/home.css">
 </head>
+
 <body>
     <div class="container">
         <div id="home" class="flex-center flex-column">
             <div id="fs">Final Score</div>
             <div class="finalScore" id="finalScore"></div>
             <form>
-                <input 
-                    type="text"
-                    name="username"
-                    id="username"
-                    placeholder="username"
-                />
-                <button
-                    type="submit"
-                    class="btn"
-                    id="saveScoreBtn"
-                    onclick="saveHighScore(event)"
-                    disabled
-                >
-                    Save
-                </button>
+                <input type="text" name="username" id="username" placeholder="username" />
+                <button type="submit" class="btn" href="./highscores.html" id="saveScoreBtn">Save</button>
             </form>
             <a class="btn" href="./quiz.html">Play Again</a>
             <a class="btn" href="./index.html">Go Home</a>
@@ -36,4 +25,5 @@
     </div>
     <script src="assets/js/end2.js"></script>
 </body>
+
 </html>

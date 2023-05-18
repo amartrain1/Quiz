@@ -43,6 +43,7 @@ h3 {
 }
 
 /* Utilities */
+/* add these classes to html elements to add the properties */
 
 .container {
     width: 100vw;
@@ -104,6 +105,7 @@ h3 {
     transition: transform 150ms;
 }
 
+/* manages the button state to prevent action when not wanted */
 .btn[disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;

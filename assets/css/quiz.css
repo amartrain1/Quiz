@@ -1,7 +1,8 @@
 .choice-container {
     display: flex;
     margin-bottom: 0.5rem;
-    width: 100%;
+    margin-right: .5rem;
+    width: 50%;
     font-size: 1.8rem;
     border: 0.1rem solid var(--dark-gray);
     background-color: #c3c197;
@@ -34,18 +35,36 @@
     background-color: #cd6e78;
 }
 
+.questions {
+    display: flex;
+    flex-direction: row;
+}
+
+.question-sub-container {
+    display: flex;
+    flex-direction: row;
+}
+
 /* HUD */
 
 #hud {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .hud-prefix {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3.5rem;
 }
 
 .hud-main-text {
+    text-align: center;
+}
+
+#timer {
+    font-size: 10rem;
+}
+
+#question {
     text-align: center;
 }

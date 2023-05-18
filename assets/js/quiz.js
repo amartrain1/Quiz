@@ -95,7 +95,6 @@ function getNewQuestion() {
         return window.location.href = 'end2.html';
     };
     questionCounter++;
-    questionCounterText.innerText = questionCounter + '/' + questionsAmount;
     
     var index = 0
     currentQuestion = availableQuestions[index];
